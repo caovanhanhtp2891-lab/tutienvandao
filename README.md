@@ -14,7 +14,7 @@ Game tu tiên tiếng Việt cho PC và điện thoại, bắt đầu từ một
 - Bản lưu tự động dự phòng; giữ bản trước khi nhập / bắt đầu lại, có màn xem và phục hồi. Bản lưu v2 cũ tiếp tục dùng, không phải bắt đầu lại.
 - Tải lại tiếp tục được khảo hạch đang dở. Tính thời gian trước thao tác để việc bật / dừng bế quan chính xác.
 
-[Tranh và prompt tạo ảnh](docs/retreat-art.md). Hình tạo bằng built-in imagegen, xuất WebP tối ưu mà không đổi nội dung.
+[Tranh và prompt tạo ảnh](docs/retreat-art.md) · [Ảnh màn bế quan](docs/retreat-v2-1-live.jpg) · [Kết quả kiểm tra v2.1](docs/retreat-ui-checks.md). Hình tạo bằng built-in imagegen, xuất WebP tối ưu mà không đổi nội dung.
 
 ## Hành trình v2
 
