@@ -49,7 +49,7 @@ npm test
 
 19 kiểm tra bao gồm lưu / khôi phục tiến trình, giới hạn tài nguyên khi nghỉ, phân công đệ tử, nâng cấp, chiêu mộ, luyện đan, đột phá, chiến đấu, nhận thưởng và tiến triển qua cả 5 bí cảnh. GitHub Actions chạy kiểm tra khi push hoặc mở pull request.
 
-Giao diện chưa được kiểm tra trực tiếp bằng trình duyệt tự động trong môi trường tạo bản đầu tiên.
+Giao diện v1.1 có bản đồ, chân dung và sân đấu mới, tối ưu bố cục cho PC và điện thoại. Các màn được kiểm tra trực tiếp trong viewport 1440, 390 và 320 px. Xem [ghi chú hình ảnh và prompt](docs/visual-art.md) và [bản kiểm tra bố cục](https://caovanhanhtp2891-lab.github.io/tutienvandao/responsive-preview.html).
 
 ### Cấu trúc phát triển
 
