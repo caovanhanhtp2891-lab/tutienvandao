@@ -1,8 +1,17 @@
-# Tu Tiên Vấn Đạo · v2.1
+# Tu Tiên Vấn Đạo · v2.2
 
 Game tu tiên tiếng Việt cho PC và điện thoại, bắt đầu từ một phàm nhân và phát triển đến tông chủ hoặc chưởng môn.
 
 **[Chơi trên GitHub Pages](https://caovanhanhtp2891-lab.github.io/tutienvandao/)** · [Kiểm tra bốn kích thước màn hình](https://caovanhanhtp2891-lab.github.io/tutienvandao/responsive-preview.html).
+
+## Hình ảnh tự nhiên v2.2
+
+- Thay toàn bộ ảnh raster đang dùng: 10 cảnh bế quan, 8 chân dung trong atlas, sân tỷ thí và bản đồ tông môn.
+- Phong cách điện ảnh chân thực: gương mặt, vải, da, gỗ, đá và cây cối tự nhiên; cảnh giới đổi trang phục, bối cảnh và ánh sáng.
+- Bỏ vòng sáng xoay và bộ lọc đổi màu; tiết chế hạt linh lực. Ảnh PC/điện thoại riêng, URL có phiên bản để cập nhật ngay.
+- Giữ tiến trình, bản lưu và toàn bộ cơ chế chơi v2.1.
+
+[Nguồn ảnh, prompt và đường dẫn tài nguyên](docs/realistic-art.md) · [Manifest 24 file](docs/realistic-art-manifest.json).
 
 ## Cập nhật bế quan v2.1
 
