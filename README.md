@@ -4,7 +4,7 @@
 
 Game web tiếng Việt về tu tiên và quản lý tông môn. Đây là mã nguồn của bản chơi thử **Thanh Vân Tông**, để tiếp tục phát triển trong dự án Tu tiên vấn đạo.
 
-[Mở bản chơi thử](https://thanh-van-tong.tart-prawn-9101.chatgpt.site) (hiện dành riêng cho tài khoản chủ dự án).
+[Chơi trên GitHub Pages](https://caovanhanhtp2891-lab.github.io/tutienvandao/) · [Bản chơi thử riêng](https://thanh-van-tong.tart-prawn-9101.chatgpt.site).
 
 ### Tính năng hiện có
 
@@ -83,7 +83,11 @@ python tools/draw-world.py
 
 ### Triển khai
 
-Đưa toàn bộ nội dung `dist` lên dịch vụ hosting tĩnh, hoặc chọn `dist` làm thư mục xuất bản. Không có lệnh build. Các đường dẫn tài nguyên là tương đối, phù hợp cả hosting trong thư mục con. Việc tải mã nguồn lên GitHub chưa bật GitHub Pages.
+Workflow `.github/workflows/pages.yml` kiểm tra JavaScript, chạy bộ kiểm tra game và xuất bản toàn bộ thư mục `dist` lên GitHub Pages khi cập nhật `main`. Có thể chạy lại thủ công từ **Actions → Deploy game to GitHub Pages → Run workflow**.
+
+Lần đầu tiên, vào **Settings → Pages → Build and deployment → Source**, chọn **GitHub Actions** để bật Pages cho kho. Đường dẫn sau khi triển khai thành công: **https://caovanhanhtp2891-lab.github.io/tutienvandao/**.
+
+Không có lệnh build. Các đường dẫn tài nguyên là tương đối, phù hợp hosting trong thư mục con. `dist/.nojekyll` giữ nguyên các tài nguyên tĩnh nếu dùng chế độ xuất bản từ nhánh.
 
 ### Giới hạn bản đầu tiên
 
