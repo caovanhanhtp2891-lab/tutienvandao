@@ -11,7 +11,7 @@ Game tu tiên tiếng Việt cho PC và điện thoại, bắt đầu từ một
 - Bỏ vòng sáng xoay và bộ lọc đổi màu; tiết chế hạt linh lực. Ảnh PC/điện thoại riêng, URL có phiên bản để cập nhật ngay.
 - Giữ tiến trình, bản lưu và toàn bộ cơ chế chơi v2.1.
 
-[Nguồn ảnh, prompt và đường dẫn tài nguyên](docs/realistic-art.md) · [Manifest 24 file](docs/realistic-art-manifest.json).
+[Nguồn ảnh, prompt và đường dẫn tài nguyên](docs/realistic-art.md) · [Manifest 24 file](docs/realistic-art-manifest.json) · [Ảnh màn chơi thật](docs/realistic-art-live.jpg) · [Kiểm tra PC/điện thoại](docs/realistic-art-ui-checks.md).
 
 ## Cập nhật bế quan v2.1
 
