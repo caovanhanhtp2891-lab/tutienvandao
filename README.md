@@ -22,6 +22,8 @@ Game tu tiên tiếng Việt cho PC và điện thoại, bắt đầu từ một
 
 **1 giây thực = 1 phút game**, kể cả khi offline. Lịch có 365 ngày/năm, tương ứng **6 ngày 2 giờ thực** cho một năm game. Đồng hồ thế giới và tu luyện v2 không có giới hạn 8 giờ. Hoạt động đang thực hiện hoàn thành và nhận thưởng một lần khi quay lại; không tự lặp nhiệm vụ.
 
+[Kết quả kiểm tra giao diện](docs/ui-checks-v2.md) · [Ảnh màn chơi](docs/journey-v2-live.jpg).
+
 Màn chính dùng `100dvh` và không cuộn toàn trang. Nhiệm vụ, tu luyện, hoạt động, kho đồ mở thành màn riêng; danh sách dùng nút Trước / Sau. Hỗ trợ màn hình PC, điện thoại nhỏ, ngang và vùng an toàn thiết bị. Hộp thoại giới hạn trong viewport; có cuộn nội bộ dự phòng cho phông chữ lớn hoặc màn hình rất thấp.
 
 Tông môn tự lập dùng hệ thống sản xuất của v1, có kho tài nguyên riêng và giới hạn sản xuất offline 8 giờ. Giới hạn này không ảnh hưởng đồng hồ, tu vi hoặc lịch đại tỷ của nhân vật.
