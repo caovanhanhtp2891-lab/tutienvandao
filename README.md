@@ -8,7 +8,7 @@ Game web tiếng Việt về tu tiên và quản lý tông môn. Đây là mã n
 
 ### Tính năng hiện có
 
-- Bản đồ SVG nguyên bản với 6 công trình có thể nâng cấp tới cấp 10.
+- Bản đồ minh họa tu tiên chi tiết với 6 công trình có thể nâng cấp tới cấp 10.
 - Chiêu mộ đệ tử, phân loại Thường / Hiếm / Thiên tài; bảo đảm Thiên tài mỗi 5 lần chiêu mộ.
 - 5 linh căn ảnh hưởng sản lượng hoặc sát thương, giao việc tự động, tu luyện đệ tử tới cấp 50.
 - 5 tài nguyên tự sản xuất theo thời gian; tích lũy khi nghỉ tối đa 8 giờ.
@@ -59,10 +59,11 @@ Giao diện v1.1 có bản đồ, chân dung và sân đấu mới, tối ưu b�
 | `dist/style.css` | Giao diện, bố cục thích ứng và hiệu ứng |
 | `dist/game.js` | Logic độc lập: dữ liệu, sản xuất, đệ tử, cảnh giới và chiến đấu |
 | `dist/app.js` | Tương tác giao diện, lưu tiến trình, đan dược và trận đấu |
-| `dist/world.svg` | Bản đồ tông môn nguyên bản |
+| `dist/assets/` | Tranh tông môn, bộ chân dung và sân chiến đấu WebP |
+| `dist/world.svg` | Bản đồ SVG của phiên bản trước |
 | `dist/icon.svg` | Biểu tượng game |
 | `tests/game.test.mjs` | Kiểm tra logic bằng Node.js |
-| `tools/draw-world.py` | Tạo lại bản đồ SVG từ mã Python |
+| `tools/draw-world.py` | Tạo lại bản đồ SVG của phiên bản trước |
 
 `dist` chứa toàn bộ mã nguồn chạy của game, dù tên thư mục thường dùng cho đầu ra build. Có thể sửa trực tiếp các tệp ở đây.
 
@@ -75,7 +76,7 @@ Giao diện v1.1 có bản đồ, chân dung và sân đấu mới, tối ưu b�
 - Bí cảnh và cân bằng: `CHAPTERS`, `beginBattle()` và `settleBattle()`.
 - Giao diện các màn: các hàm `*Markup()` trong `dist/app.js`.
 
-Tạo lại bản đồ:
+Tạo lại bản đồ SVG của phiên bản trước (giao diện mới dùng hình ảnh trong `dist/assets/`):
 
 ```bash
 python tools/draw-world.py
