@@ -35,6 +35,8 @@ jobs:
           node --check dist/app.js
           node --check dist/journey.js
           node --check dist/adventure-app.js
+          node --check dist/progression.js
+          node --check dist/saves.js
           npm test
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

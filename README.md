@@ -1,8 +1,20 @@
-# Tu Tiên Vấn Đạo · v2.0
+# Tu Tiên Vấn Đạo · v2.1
 
 Game tu tiên tiếng Việt cho PC và điện thoại, bắt đầu từ một phàm nhân và phát triển đến tông chủ hoặc chưởng môn.
 
 **[Chơi trên GitHub Pages](https://caovanhanhtp2891-lab.github.io/tutienvandao/)** · [Kiểm tra bốn kích thước màn hình](https://caovanhanhtp2891-lab.github.io/tutienvandao/responsive-preview.html).
+
+## Cập nhật bế quan v2.1
+
+- Màn chính là tu sĩ ngồi bế quan, với 10 tranh riêng từ Phàm nhân đến Độ Kiếp. Cảnh, áo bào, linh lực và số lớp hiệu ứng đổi theo đại cảnh giới.
+- Tranh WebP riêng cho PC / điện thoại; chỉ tải tranh cần dùng, không tải toàn bộ bộ tranh. Hiệu ứng có Đầy đủ / Nhẹ / Tắt và tôn trọng thiết lập giảm chuyển động.
+- Bảng tu vi có phần trăm, tốc độ thực tế và thời gian dự kiến lên tầng; phản ánh bế quan, hoạt động, tỷ thí và giới hạn tầng 9.
+- Mục tiêu tiếp theo dẫn thẳng đến khảo hạch, hoạt động đang làm, trận đấu, đột phá, đại tỷ hoặc phần thưởng đang chờ.
+- 13 thành tựu có phần thưởng nhận một lần. Điều kiện đột phá / thăng chức hiển thị rõ; không đột phá giữa nhiệm vụ hay chiến đấu.
+- Bản lưu tự động dự phòng; giữ bản trước khi nhập / bắt đầu lại, có màn xem và phục hồi. Bản lưu v2 cũ tiếp tục dùng, không phải bắt đầu lại.
+- Tải lại tiếp tục được khảo hạch đang dở. Tính thời gian trước thao tác để việc bật / dừng bế quan chính xác.
+
+[Tranh và prompt tạo ảnh](docs/retreat-art.md). Hình tạo bằng built-in imagegen, xuất WebP tối ưu mà không đổi nội dung.
 
 ## Hành trình v2
 
@@ -22,7 +34,7 @@ Game tu tiên tiếng Việt cho PC và điện thoại, bắt đầu từ một
 
 **1 giây thực = 1 phút game**, kể cả khi offline. Lịch có 365 ngày/năm, tương ứng **6 ngày 2 giờ thực** cho một năm game. Đồng hồ thế giới và tu luyện v2 không có giới hạn 8 giờ. Hoạt động đang thực hiện hoàn thành và nhận thưởng một lần khi quay lại; không tự lặp nhiệm vụ.
 
-[Kết quả kiểm tra giao diện](docs/ui-checks-v2.md) · [Ảnh màn chơi](docs/journey-v2-live.jpg).
+[Kết quả kiểm tra giao diện](docs/ui-checks-v2.md).
 
 Màn chính dùng `100dvh` và không cuộn toàn trang. Nhiệm vụ, tu luyện, hoạt động, kho đồ mở thành màn riêng; danh sách dùng nút Trước / Sau. Hỗ trợ màn hình PC, điện thoại nhỏ, ngang và vùng an toàn thiết bị. Hộp thoại giới hạn trong viewport; có cuộn nội bộ dự phòng cho phông chữ lớn hoặc màn hình rất thấp.
 
@@ -46,13 +58,15 @@ Kiểm tra với Node.js 22 trở lên:
 npm test
 ```
 
-44 kiểm tra logic bao gồm 19 kiểm tra quản lý v1 và 25 kiểm tra hành trình v2: khảo hạch, thời gian, offline, năm, phần thưởng một lần, giao lưu, quan hệ, chiến đấu, thăng chức, khai tông và nhập tiến trình lỗi. GitHub Actions chạy kiểm tra và triển khai trên mỗi lần cập nhật `main`.
+57 kiểm tra logic bao gồm 19 kiểm tra quản lý v1, 25 kiểm tra hành trình v2 và 13 kiểm tra bế quan / thành tựu / bản lưu: khảo hạch, thời gian, offline, năm, phần thưởng một lần, giao lưu, quan hệ, chiến đấu, thăng chức, khai tông và nhập tiến trình lỗi. GitHub Actions chạy kiểm tra và triển khai trên mỗi lần cập nhật `main`.
 
 ## Mã nguồn
 
 | Tệp | Vai trò |
 | --- | --- |
 | `dist/index.html`, `dist/journey.css` | Khung game v2 và bố cục vừa màn hình |
+| `dist/retreat.css`, `dist/progression.js` | Màn bế quan, hình theo cảnh giới, điều kiện và thành tựu |
+| `dist/saves.js` | Tự lưu, bản dự phòng và phục hồi |
 | `dist/journey.js` | Khảo hạch, đồng hồ, hành trình, nhiệm vụ, vật phẩm, quan hệ và chiến đấu |
 | `dist/adventure-app.js` | Các màn chức năng, hành động, lưu tiến trình |
 | `dist/legacy.html`, `dist/style.css`, `dist/app.js` | Giao diện quản lý v1 được giữ lại |

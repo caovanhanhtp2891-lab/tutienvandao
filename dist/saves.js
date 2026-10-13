@@ -1,0 +1,7 @@
+import * as G from './journey.js?v=2.1';
+export const KEY='thanh-van-tong-v2',AUTO=KEY+'-auto',MANUAL=KEY+'-backup',RECOVERY=KEY+'-recovery';
+function validRaw(raw){try{return !!raw&&G.validSave(JSON.parse(raw));}catch{return false;}}
+export function readBackup(storage){for(const [key,kind]of [[MANUAL,'Trước khi thay tiến trình'],[AUTO,'Bản lưu tự động gần nhất']]){const raw=storage.getItem(key);if(validRaw(raw))return {raw,state:JSON.parse(raw),kind};}return null;}
+export function readGame(storage,now=Date.now()){const raw=storage.getItem(KEY),loaded=G.restore(raw,now);if(!loaded.recovered)return {...loaded,notice:null};try{storage.setItem(RECOVERY,raw);}catch{}const backup=[AUTO,MANUAL].map(key=>{const raw=storage.getItem(key);return validRaw(raw)?{raw,state:JSON.parse(raw)}:null;}).filter(Boolean).sort((a,b)=>b.state.lastAt-a.state.lastAt)[0];if(backup)return {...G.restore(backup.raw,now),notice:'Đã khôi phục tiến trình từ bản lưu dự phòng.',recovered:false};return {...loaded,notice:'Bản lưu chưa đọc được. Đã giữ bản gốc và mở hành trình mới.'};}
+export function backupGame(storage,state){storage.setItem(MANUAL,JSON.stringify(state));}
+export function saveGame(storage,state,backupAt=0,now=Date.now()){if(!G.validSave(state))throw Error('Tiến trình không hợp lệ, chưa thể tự lưu.');if(now-backupAt>=30000){const previous=storage.getItem(KEY);if(validRaw(previous))storage.setItem(AUTO,previous);backupAt=now;}storage.setItem(KEY,JSON.stringify(state));return backupAt;}
