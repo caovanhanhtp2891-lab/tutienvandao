@@ -1,99 +1,70 @@
-# Tu tiên vấn đạo
+# Tu Tiên Vấn Đạo · v2.0
 
-## Thanh Vân Tông — Tiên môn nhàn du
+Game tu tiên tiếng Việt cho PC và điện thoại, bắt đầu từ một phàm nhân và phát triển đến tông chủ hoặc chưởng môn.
 
-Game web tiếng Việt về tu tiên và quản lý tông môn. Đây là mã nguồn của bản chơi thử **Thanh Vân Tông**, để tiếp tục phát triển trong dự án Tu tiên vấn đạo.
+**[Chơi trên GitHub Pages](https://caovanhanhtp2891-lab.github.io/tutienvandao/)** · [Kiểm tra bốn kích thước màn hình](https://caovanhanhtp2891-lab.github.io/tutienvandao/responsive-preview.html).
 
-[Chơi trên GitHub Pages](https://caovanhanhtp2891-lab.github.io/tutienvandao/) · [Bản chơi thử riêng](https://thanh-van-tong.tart-prawn-9101.chatgpt.site).
+## Hành trình v2
 
-### Tính năng hiện có
+- Bắt đầu là phàm nhân 16 tuổi. Đặt tên, chọn nam / nữ tu và diện mạo.
+- Đo linh căn, tư chất; chọn một trong sáu tông môn và vượt ba câu khảo hạch đạo tâm. Linh căn, tư chất giữ nguyên khi khảo hạch lại.
+- Tự tu luyện, tăng tầng; đột phá đại cảnh giới khi đủ tu vi và vật liệu. Có 9 cảnh giới từ Luyện Khí đến Độ Kiếp.
+- 8 nhiệm vụ tông môn, nhận cống hiến đổi 8 loại vật phẩm. Tổng cống hiến cả đời được lưu riêng, việc đổi đồ không làm mất điều kiện thăng chức.
+- Lịch luyện, giao lưu tông môn, 5 bí cảnh; ngẫu nhiên nhận công pháp, đan dược, thảo dược, pháp bảo; kết giao bạn hữu hoặc nảy sinh hiềm khích.
+- Tỷ thí lên 8 chức danh: Tạp dịch → Ngoại môn → Nội môn → Trọng tâm → Chân truyền → Thánh tử / Thánh nữ → Trưởng lão → Chưởng môn.
+- Đại tỷ mỗi năm game gồm ba vòng. Nhận thưởng từng vòng; quán quân nhận công pháp quý. Lưu tối đa ba kỳ gần nhất khi vắng lâu, giữ kỳ đang đấu.
+- Đến Nguyên Anh có thể rời tông môn, đặt tên tông môn riêng, nâng 6 công trình, chiêu mộ và phân công đệ tử. Có thể ở lại để tiếp tục thăng chức.
+- 5 tình huống cốt truyện với các lựa chọn thực sự ảnh hưởng tài nguyên, quan hệ và đạo tâm. Bạn hữu tăng công kích; kẻ thù có thể tìm đến cửa.
+- Chiến đấu theo lượt tự động, kỹ năng mỗi ba lượt, tốc độ ×1 / ×3; trận đấu có thể tiếp tục sau khi tải lại.
+- Tự lưu, xuất / nhập bản lưu JSON. Bản quản lý v1 và tiến trình cũ còn ở [legacy.html](https://caovanhanhtp2891-lab.github.io/tutienvandao/legacy.html).
 
-- Bản đồ minh họa tu tiên chi tiết với 6 công trình có thể nâng cấp tới cấp 10.
-- Chiêu mộ đệ tử, phân loại Thường / Hiếm / Thiên tài; bảo đảm Thiên tài mỗi 5 lần chiêu mộ.
-- 5 linh căn ảnh hưởng sản lượng hoặc sát thương, giao việc tự động, tu luyện đệ tử tới cấp 50.
-- 5 tài nguyên tự sản xuất theo thời gian; tích lũy khi nghỉ tối đa 8 giờ.
-- 9 cảnh giới cho tông sư; đột phá tăng sức mạnh đội hình.
-- Luyện và dùng 3 loại đan dược.
-- Đội hình tối đa 5 đệ tử, chiến đấu theo lượt với kỹ năng tự thi triển sau 3 lượt.
-- 5 bí cảnh, mỗi bí cảnh 3 tầng; chiến thắng mở khu vực tiếp theo.
-- Nhiệm vụ có thưởng, nhật ký hoạt động, âm thanh thao tác.
-- Tự lưu trên trình duyệt, xuất / nhập tiến trình JSON và bắt đầu lại có xác nhận.
-- Giao diện thích ứng cho máy tính và điện thoại.
+## Thời gian và màn hình
 
-### Chạy trên máy
+**1 giây thực = 1 phút game**, kể cả khi offline. Lịch có 365 ngày/năm, tương ứng **6 ngày 2 giờ thực** cho một năm game. Đồng hồ thế giới và tu luyện v2 không có giới hạn 8 giờ. Hoạt động đang thực hiện hoàn thành và nhận thưởng một lần khi quay lại; không tự lặp nhiệm vụ.
 
-Tải mã nguồn hoặc clone kho:
+Màn chính dùng `100dvh` và không cuộn toàn trang. Nhiệm vụ, tu luyện, hoạt động, kho đồ mở thành màn riêng; danh sách dùng nút Trước / Sau. Hỗ trợ màn hình PC, điện thoại nhỏ, ngang và vùng an toàn thiết bị. Hộp thoại giới hạn trong viewport; có cuộn nội bộ dự phòng cho phông chữ lớn hoặc màn hình rất thấp.
+
+Tông môn tự lập dùng hệ thống sản xuất của v1, có kho tài nguyên riêng và giới hạn sản xuất offline 8 giờ. Giới hạn này không ảnh hưởng đồng hồ, tu vi hoặc lịch đại tỷ của nhân vật.
+
+## Chạy và kiểm tra
+
+Không có dependency hoặc bước build. Phục vụ thư mục `dist` bằng HTTP:
 
 ```bash
 git clone https://github.com/caovanhanhtp2891-lab/tutienvandao.git
 cd tutienvandao
-```
-
-Game không cần cài thư viện hoặc build. Dùng Python 3 để phục vụ thư mục `dist`:
-
-```bash
 python -m http.server 8000 --directory dist
 ```
 
-Mở **http://localhost:8000**. Trên Windows có thể dùng `py` thay cho `python`; trên macOS/Linux có thể dùng `python3`. Nếu có sẵn máy chủ tĩnh hoặc Live Server, đặt thư mục phục vụ là `dist`.
+Mở `http://localhost:8000`. Windows có thể dùng `py`, macOS/Linux có thể dùng `python3`. ES modules cần HTTP, không mở bằng `file://`.
 
-Không mở trực tiếp `index.html` bằng `file://`, vì JavaScript sử dụng ES modules. Phông chữ web có phông hệ thống dự phòng.
-
-### Kiểm tra logic
-
-Cần Node.js 22 hoặc mới hơn. Không cần chạy `npm install` vì dự án không có dependency.
+Kiểm tra với Node.js 22 trở lên:
 
 ```bash
 npm test
 ```
 
-19 kiểm tra bao gồm lưu / khôi phục tiến trình, giới hạn tài nguyên khi nghỉ, phân công đệ tử, nâng cấp, chiêu mộ, luyện đan, đột phá, chiến đấu, nhận thưởng và tiến triển qua cả 5 bí cảnh. GitHub Actions chạy kiểm tra khi push hoặc mở pull request.
+44 kiểm tra logic bao gồm 19 kiểm tra quản lý v1 và 25 kiểm tra hành trình v2: khảo hạch, thời gian, offline, năm, phần thưởng một lần, giao lưu, quan hệ, chiến đấu, thăng chức, khai tông và nhập tiến trình lỗi. GitHub Actions chạy kiểm tra và triển khai trên mỗi lần cập nhật `main`.
 
-Giao diện v1.1 có bản đồ, chân dung và sân đấu mới, tối ưu bố cục cho PC và điện thoại. Các màn được kiểm tra trực tiếp trong viewport 1440, 390 và 320 px. Xem [ghi chú hình ảnh và prompt](docs/visual-art.md) và [bản kiểm tra bố cục](https://caovanhanhtp2891-lab.github.io/tutienvandao/responsive-preview.html).
+## Mã nguồn
 
-### Cấu trúc phát triển
-
-| Tệp / thư mục | Vai trò |
+| Tệp | Vai trò |
 | --- | --- |
-| `dist/index.html` | Khung ứng dụng và hệ thống biểu tượng SVG |
-| `dist/style.css` | Giao diện, bố cục thích ứng và hiệu ứng |
-| `dist/game.js` | Logic độc lập: dữ liệu, sản xuất, đệ tử, cảnh giới và chiến đấu |
-| `dist/app.js` | Tương tác giao diện, lưu tiến trình, đan dược và trận đấu |
-| `dist/assets/` | Tranh tông môn, bộ chân dung và sân chiến đấu WebP |
-| `dist/world.svg` | Bản đồ SVG của phiên bản trước |
-| `dist/icon.svg` | Biểu tượng game |
-| `tests/game.test.mjs` | Kiểm tra logic bằng Node.js |
-| `tools/draw-world.py` | Tạo lại bản đồ SVG của phiên bản trước |
+| `dist/index.html`, `dist/journey.css` | Khung game v2 và bố cục vừa màn hình |
+| `dist/journey.js` | Khảo hạch, đồng hồ, hành trình, nhiệm vụ, vật phẩm, quan hệ và chiến đấu |
+| `dist/adventure-app.js` | Các màn chức năng, hành động, lưu tiến trình |
+| `dist/legacy.html`, `dist/style.css`, `dist/app.js` | Giao diện quản lý v1 được giữ lại |
+| `dist/game.js` | Sản xuất, công trình và đệ tử cho tông môn tự lập / v1 |
+| `dist/assets/` | Tranh và bộ chân dung WebP thiết kế riêng |
+| `tests/` | Kiểm tra logic v1 / v2 bằng Node.js |
+| `docs/journey-v2.md` | Quy tắc tiến trình, cân bằng, đường kiếm vật liệu |
 
-`dist` chứa toàn bộ mã nguồn chạy của game, dù tên thư mục thường dùng cho đầu ra build. Có thể sửa trực tiếp các tệp ở đây.
+Sửa trực tiếp các tệp trong `dist`. Các đường dẫn là tương đối nên hỗ trợ GitHub Pages trong thư mục con. [Ghi chú hình ảnh](docs/visual-art.md) lưu thiết kế và prompt của các hình gốc.
 
-### Thay đổi nội dung
+## Triển khai và giới hạn
 
-- Công trình và năng suất: `BUILDINGS` trong `dist/game.js`.
-- Linh căn và kỹ năng: `ELEMENTS`, `fighter()` và `battleStep()`.
-- Cảnh giới và chi phí: `REALMS`, `realmCost()` và `breakthrough()`.
-- Đan dược: `RECIPES`, `craft()` và `usePill()`.
-- Bí cảnh và cân bằng: `CHAPTERS`, `beginBattle()` và `settleBattle()`.
-- Giao diện các màn: các hàm `*Markup()` trong `dist/app.js`.
+Workflow `.github/workflows/pages.yml` xuất bản `dist` lên GitHub Pages sau khi kiểm tra thành công. Pages của kho đã được bật bằng nguồn GitHub Actions.
 
-Tạo lại bản đồ SVG của phiên bản trước (giao diện mới dùng hình ảnh trong `dist/assets/`):
+Đây là game chơi đơn, lưu trên trình duyệt từng thiết bị. Chưa có tài khoản, đồng bộ đám mây, PvP trực tuyến hoặc bảng xếp hạng đa người. Thời gian dựa vào đồng hồ thiết bị; xuất bản lưu nếu chuyển máy hoặc xóa dữ liệu trình duyệt.
 
-```bash
-python tools/draw-world.py
-```
-
-### Triển khai
-
-Workflow `.github/workflows/pages.yml` kiểm tra JavaScript, chạy bộ kiểm tra game và xuất bản toàn bộ thư mục `dist` lên GitHub Pages khi cập nhật `main`. Có thể chạy lại thủ công từ **Actions → Deploy game to GitHub Pages → Run workflow**.
-
-Lần đầu tiên, vào **Settings → Pages → Build and deployment → Source**, chọn **GitHub Actions** để bật Pages cho kho. Đường dẫn sau khi triển khai thành công: **https://caovanhanhtp2891-lab.github.io/tutienvandao/**.
-
-Không có lệnh build. Các đường dẫn tài nguyên là tương đối, phù hợp hosting trong thư mục con. `dist/.nojekyll` giữ nguyên các tài nguyên tĩnh nếu dùng chế độ xuất bản từ nhánh.
-
-### Giới hạn bản đầu tiên
-
-Game hiện dành cho một người chơi. Chưa có tài khoản, máy chủ, PvP, bảng xếp hạng liên thiết bị hoặc đồng bộ đám mây. Tiến trình lưu trong localStorage trên từng trình duyệt; cần xuất bản lưu trước khi xóa dữ liệu trình duyệt hoặc chuyển thiết bị. Thời gian và tài nguyên do thiết bị tính, phù hợp bản chơi đơn.
-
-### Nguồn cảm hứng
-
-Vòng chơi quản lý tông môn và tu tiên được tham khảo ở mức thể loại từ mô tả công khai của [Ta Làm Tông Sư Trong Tiên Môn](https://apps.apple.com/vn/app/id6749835889). Mã nguồn, bản đồ SVG, nhân vật và cân bằng của bản này được thiết kế riêng.
+Cảm hứng thuộc thể loại quản lý tông môn và tu tiên; mã nguồn, hình ảnh và nội dung game được thiết kế riêng, không sử dụng tài nguyên của game trên App Store.

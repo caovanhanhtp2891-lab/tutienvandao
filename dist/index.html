@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="vi">
 <head>
- <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
- <meta name="theme-color" content="#0b1715"><meta name="description" content="Khai sơn lập phái, thu nhận đệ tử và tìm đường phi thăng. Thanh Vân Tông là game tu tiên quản lý tông môn, chơi ngay trên trình duyệt.">
- <title>Thanh Vân Tông — Tiên môn nhàn du</title>
- <link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=1.1.1">
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <meta name="theme-color" content="#0b1715"><meta name="description" content="Bắt đầu từ phàm nhân, khảo hạch nhập tông môn, tu luyện, tìm cơ duyên và khai sơn lập phái. Game tu tiên tiếng Việt trên PC và điện thoại.">
+ <title>Tu Tiên Vấn Đạo — Hành trình phàm nhân</title>
+ <link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="journey.css?v=2.0">
  <link rel="preload" as="image" href="assets/characters.webp">
  <link rel="preload" as="image" href="assets/sect-world-mobile.webp" media="(max-width: 700px)">
  <link rel="preload" as="image" href="assets/sect-world.webp" media="(min-width: 701px)">
@@ -28,18 +28,13 @@
  <symbol id="i-sound" viewBox="0 0 24 24"><path d="M3 9h4l5-5v16l-5-5H3V9Zm13-2a8 8 0 0 1 0 10m-1-7a4 4 0 0 1 0 4"/></symbol>
  <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2"/></symbol>
  </defs></svg>
- <div class="app-shell">
-  <aside class="sidebar"><a class="brand-seal" href="#" aria-label="Thanh Vân Tông"><svg><use href="#i-mountain"/></svg></a><nav id="navigation">
-   <button data-nav="home" class="nav-item active"><svg><use href="#i-home"/></svg><span>Tông môn</span></button>
-   <button data-nav="disciples" class="nav-item"><svg><use href="#i-users"/></svg><span>Đệ tử</span></button>
-   <button data-nav="adventure" class="nav-item"><svg><use href="#i-sword"/></svg><span>Bí cảnh</span></button>
-   <button data-nav="alchemy" class="nav-item"><svg><use href="#i-pill"/></svg><span>Luyện đan</span></button>
-   <button data-nav="inventory" class="nav-item"><svg><use href="#i-bag"/></svg><span>Túi đồ</span></button>
-  </nav><button class="nav-item help-nav" data-action="help"><span class="help-circle">?</span><span>Hướng dẫn</span></button><div class="sidebar-bottom">TIÊN<br>MÔN</div></aside>
-  <div class="main-shell"><header class="topbar"><div class="wordmark"><strong>Thanh Vân Tông</strong><span>TIÊN MÔN NHÀN DU</span></div><div class="resources" id="resources"></div><div class="header-actions"><button class="icon-button" data-action="sound" aria-label="Bật hoặc tắt âm thanh" id="sound-toggle"><svg><use href="#i-sound"/></svg></button><button class="icon-button" data-action="settings" aria-label="Cài đặt"><svg><use href="#i-settings"/></svg></button></div></header>
-   <main id="main"><section id="view"></section></main><footer><span><i class="live-dot"></i> Tông môn đang vận hành</span><span id="save-status">Tự lưu tiến trình trên thiết bị</span><span>THANH VÂN TÔNG · v1.1</span></footer>
-  </div>
+ <div class="game-shell">
+  <header class="game-header" id="game-header"></header>
+  <main class="stage" aria-label="Màn chơi"><div class="game-view" id="game-view"></div><span class="clock-hint" id="clock-hint"></span></main>
+  <nav class="bottom-nav" id="bottom-nav" aria-label="Chức năng game"></nav>
  </div>
- <div class="toast-region" id="toasts" aria-live="polite"></div><dialog id="modal" aria-labelledby="modal-title"><div id="modal-body"></div></dialog>
- <input id="import-save" type="file" accept=".json,application/json" hidden><script type="module" src="app.js?v=1.1"></script>
+ <div class="toast-region" id="toasts" aria-live="polite"></div>
+ <dialog id="modal" aria-labelledby="modal-title"><div id="modal-body"></div></dialog>
+ <input id="import-save" type="file" accept=".json,application/json" hidden>
+ <script type="module" src="adventure-app.js?v=2.0"></script>
 </body></html>

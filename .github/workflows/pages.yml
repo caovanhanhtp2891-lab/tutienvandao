@@ -33,6 +33,8 @@ jobs:
         run: |
           node --check dist/game.js
           node --check dist/app.js
+          node --check dist/journey.js
+          node --check dist/adventure-app.js
           npm test
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

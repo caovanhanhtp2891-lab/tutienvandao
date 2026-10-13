@@ -21,5 +21,7 @@ jobs:
         run: |
           node --check dist/game.js
           node --check dist/app.js
+          node --check dist/journey.js
+          node --check dist/adventure-app.js
       - name: Run game tests
         run: npm test
