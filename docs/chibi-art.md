@@ -32,3 +32,5 @@ Toàn bộ URL phiên bản JS, CSS và WebP đổi sang `v=2.4.1`. Khóa bản 
 - Kiểm tra WebP, số byte, SHA-256 và ngân sách ảnh trong manifest.
 - `npm test`: logic game, luyện khí, bản lưu và toàn vẹn bộ ảnh.
 - Kiểm tra bản chạy thật sau khi Pages triển khai; không dùng localhost qua trình duyệt đám mây.
+
+Kết quả thực tế và ảnh màn chơi: [chibi-ui-checks.md](chibi-ui-checks.md).
