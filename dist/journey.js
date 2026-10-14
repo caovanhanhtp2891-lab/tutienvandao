@@ -59,7 +59,7 @@ const PEOPLE=['Lâm Thanh','Bạch Vân','Tử Nghiên','Hàn Phong','Mộc Than
 const PROMOTION=[{realm:1,stage:1,merit:0},{realm:1,stage:3,merit:35},{realm:1,stage:6,merit:100},{realm:2,stage:1,merit:240},{realm:2,stage:6,merit:500},{realm:3,stage:5,merit:950},{realm:4,stage:1,merit:1700},{realm:5,stage:1,merit:3600}];
 const finite=(n,min=0,max=1e12)=>Number.isFinite(n)&&n>=min&&n<=max;
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
-export function newGame(now=Date.now(),seed=(now>>>0)||12345){return {version:2,claimedMilestones:[],name:'Vân Du',gender:'male',portrait:6,realm:0,stage:1,xp:0,root:null,potential:null,sectId:null,rank:0,path:'mortal',training:false,stone:25,herb:0,ore:0,wood:0,contribution:0,merit:0,reputation:0,karma:0,items:{},learned:[],technique:null,artifact:null,buff:false,gameMinutes:0,lastAt:now,seed:seed>>>0,exam:null,activity:null,battle:null,pendingEvent:null,nextStory:3*DAY,contacts:[],annualYears:[],annualNext:1,tournament:null,completedAnnual:[],cooldowns:{},foundation:null,sectName:'',stats:{missions:0,journeys:0,wins:0,promotions:0,annualWins:0,events:0},log:[{time:0,text:'Một phàm nhân đến dưới chân núi. Tiên đồ đang chờ phía trước.'}],sound:false};}
+export function newGame(now=Date.now(),seed=(now>>>0)||12345){return {version:2,claimedMilestones:[],name:'Vân Du',gender:'male',portrait:6,realm:0,stage:1,xp:0,root:null,potential:null,sectId:null,rank:0,path:'mortal',training:false,stone:25,herb:0,ore:0,wood:0,contribution:0,merit:0,reputation:0,karma:0,items:{},enhancements:{},learned:[],technique:null,artifact:null,buff:false,gameMinutes:0,lastAt:now,seed:seed>>>0,exam:null,activity:null,battle:null,pendingEvent:null,nextStory:3*DAY,contacts:[],annualYears:[],annualNext:1,tournament:null,completedAnnual:[],cooldowns:{},foundation:null,sectName:'',stats:{missions:0,journeys:0,wins:0,promotions:0,annualWins:0,events:0},log:[{time:0,text:'Một phàm nhân đến dưới chân núi. Tiên đồ đang chờ phía trước.'}],sound:false};}
 export function random(s){s.seed=(Math.imul(s.seed,1664525)+1013904223)>>>0;return s.seed/4294967296;}
 export function addLog(s,text){s.log.unshift({time:s.gameMinutes,text});s.log=s.log.slice(0,60);}
 export function calendar(s){const minutes=Math.floor(s.gameMinutes),day=Math.floor(minutes/DAY),doy=day%365;const lengths=[31,28,31,30,31,30,31,31,30,31,30,31];let month=0,d=doy;while(d>=lengths[month])d-=lengths[month++];return {year:Math.floor(day/365)+1,month:month+1,day:d+1,hour:Math.floor(minutes%DAY/60),minute:minutes%60,age:16+Math.floor(day/365)};}
@@ -122,7 +122,7 @@ export function breakthrough(s){if(s.activity||s.battle?.status==='fighting')ret
 export function meditate(s,now=Date.now()){if(!s.realm)return 'Bạn còn là phàm nhân. Hãy nhập tông môn trước.';if(now-(s.lastFocus||0)<900)return 'Hãy giữ nhịp thở, đừng vội.';s.lastFocus=now;gainXP(s,3+s.realm);return null;}
 export function promotionRequirement(s){return PROMOTION[Math.min(7,s.rank+1)];}
 export function eligible(s,req){return s.realm>req.realm||(s.realm===req.realm&&s.stage>=req.stage);}
-export function stats(s){const n=s.realm?10*s.realm+s.stage:0,t=BOOKS.find(x=>x.id===s.technique),a=ARTIFACTS.find(x=>x.id===s.artifact);const friends=Math.min(3,s.contacts.filter(x=>x.affinity>=40).length);const buff=s.buff?1.25:1;return {maxHp:Math.round((140+n*24+(a?.hp||0))*buff),atk:Math.round((14+n*5+(a?.attack||0))*(1+(t?.attack||0)+friends*.04)*buff),def:Math.round((4+n*2+(a?.defense||0))*(1+(t?.defense||0))),dodge:t?.speed||0,skill:t?.skill||'Phàm Nhân Quyền'};}
+export function stats(s){const n=s.realm?10*s.realm+s.stage:0,t=BOOKS.find(x=>x.id===s.technique),a=artifactStats(s,s.artifact);const friends=Math.min(3,s.contacts.filter(x=>x.affinity>=40).length);const buff=s.buff?1.25:1;return {maxHp:Math.round((140+n*24+(a?.hp||0))*buff),atk:Math.round((14+n*5+(a?.attack||0))*(1+(t?.attack||0)+friends*.04)*buff),def:Math.round((4+n*2+(a?.defense||0))*(1+(t?.defense||0))),dodge:t?.speed||0,skill:t?.skill||'Phàm Nhân Quyền'};}
 export function power(s){const p=stats(s);return Math.round(p.maxHp*.4+p.atk*4+p.def*2);}
 export function startBattle(s,type,id){if(s.path==='mortal')return {error:'Hãy vượt khảo hạch để nhập đạo trước.'};if(s.activity)return {error:'Hãy hoàn thành hoạt động hiện tại trước.'};if(s.battle?.status==='fighting')return {error:'Đang có một trận đấu.'};let enemy,target=id,scale=1,cost=0;
  if(type==='dungeon'){const a=AREAS.find(x=>x.id===id);if(!a||!eligible(s,{realm:a.realm,stage:a.stage}))return {error:'Cảnh giới chưa đủ để vào bí cảnh.'};const i=AREAS.indexOf(a);enemy={name:a.enemy,hp:330+i*420,atk:40+i*53,def:10+i*17,portrait:7,monster:true};}
@@ -143,7 +143,7 @@ export function settleBattle(s){const b=s.battle;if(!b||b.status==='fighting'||b
  if(b.type==='event'&&s.pendingEvent){if(won){r={contribution:45,stone:50};s.reputation+=5;const p=s.contacts.find(x=>x.id===s.pendingEvent.personId);if(p)p.affinity=clamp(p.affinity-5,-100,100);}else s.reputation-=2;s.pendingEvent=null;s.stats.events++;}
  reward(s,r);b.result={won,reward:r,loot};addLog(s,(won?'Chiến thắng':'Tạm lui dưỡng sức')+' trước '+b.enemy.name+'.'+(loot?' Thu được '+itemName(loot)+'.':''));return b.result;
 }
-export function resolveEvent(s,index){const e=s.pendingEvent;if(!e||!STORIES[e.id]||!Number.isInteger(index)||index<0||index>2)return {error:'Sự kiện hoặc lựa chọn không hợp lệ.'};if((e.id==='rival'&&index===0)||(e.id==='quarrel'&&index===2))return startBattle(s,'event',e.id);
+export function resolveEvent(s,index){if(s.battle?.status==='fighting')return {error:'Hãy hoàn thành trận đấu trước khi chọn cốt truyện.'};const e=s.pendingEvent;if(!e||!STORIES[e.id]||!Number.isInteger(index)||index<0||index>2)return {error:'Sự kiện hoặc lựa chọn không hợp lệ.'};if((e.id==='rival'&&index===0)||(e.id==='quarrel'&&index===2))return startBattle(s,'event',e.id);
  if(e.id==='rival'){if(index===1){if(s.contribution<80)return {error:'Cần 80 cống hiến.'};s.contribution-=80;s.reputation++;}else{if(s.stone<100)return {error:'Cần 100 linh thạch.'};s.stone-=100;const p=s.contacts.find(x=>x.id===e.personId);if(p)p.affinity=clamp(p.affinity+30,-100,100);}}
  if(e.id==='quarrel'){if(index===0){if(s.herb<5)return {error:'Cần 5 linh thảo để chia sẻ.'};s.herb-=5;s.karma+=3;meet(s,false);}else{s.reputation+=2;reward(s,{contribution:12});}}
  if(e.id==='traveler'){if(index===0){if(s.herb<5)return {error:'Cần 5 linh thảo.'};s.herb-=5;s.karma+=5;meet(s,false);reward(s,{contribution:25});}else if(index===1){meet(s,false);s.karma++;}else{s.karma-=8;s.reputation-=4;reward(s,{stone:90});meet(s,true);}}
@@ -155,8 +155,51 @@ export function relationship(p){return p.affinity>=40?'Bạn hữu':p.affinity<=
 export function foundSect(s,name,now=Date.now()){if(s.path!=='member')return 'Bạn chưa thể khai tông theo nhánh này.';if(s.realm<4)return 'Cần đạt Nguyên Anh để rời tông môn và khai sơn.';if(s.activity||s.battle?.status==='fighting')return 'Hãy hoàn thành hoạt động hoặc trận đấu trước.';name=String(name).trim();if(name.length<2||name.length>28)return 'Tên tông môn cần từ 2 đến 28 ký tự.';if(s.stone<3000||s.wood<120||s.ore<80)return 'Cần 3.000 linh thạch, 120 linh mộc và 80 linh khoáng.';s.stone-=3000;s.wood-=120;s.ore-=80;s.path='founder';s.sectName=name;s.foundation=Legacy.newGame(now);s.foundation.sound=false;addLog(s,'Rời '+sect(s).name+', khai sơn lập phái: '+name+'. Ba đồng đạo đầu tiên đến giúp sức.');return null;}
 export function foundationAction(s,action,id,job){if(!s.foundation||s.path!=='founder')return 'Bạn chưa có tông môn riêng.';if(action==='upgrade')return Legacy.upgrade(s.foundation,id);if(action==='recruit'){const r=Legacy.recruit(s.foundation,()=>random(s));return r.error||null;}if(action==='assign')return Legacy.assign(s.foundation,Number(id),job);return 'Hành động không hợp lệ.';}
 export function craft(s,id){if(!['pillQi','pillHeal','pillBreak'].includes(id)||!s.realm)return 'Chưa thể luyện đan này.';const c=id==='pillBreak'?{stone:180,herb:60,ore:20}:id==='pillHeal'?{stone:30,herb:15,ore:0}:{stone:45,herb:20,ore:0};if(s.stone<c.stone||s.herb<c.herb||s.ore<c.ore)return 'Chưa đủ nguyên liệu.';for(const k of Object.keys(c))s[k]-=c[k];addItem(s,id);addLog(s,'Luyện thành '+itemName(id)+'.');return null;}
+
+// Enhancement belongs to the artifact type; duplicate drops share its level.
+export const MAX_ENHANCEMENT=10;
+const GRADE_WEIGHT={'Phàm phẩm':1,'Linh phẩm':2,'Huyền phẩm':4,'Địa phẩm':7};
+export function artifactStats(s,id){
+ const a=ARTIFACTS.find(x=>x.id===id);if(!a)return null;
+ const level=s.enhancements?.[id]||0,factor=1+level*.15;
+ return {...a,level,attack:Math.round(a.attack*factor),defense:Math.round(a.defense*factor),hp:Math.round(a.hp*factor)};
+}
+export function enhancementStatus(s,id){
+ const a=artifactStats(s,id),level=a?.level||0,next=level+1,weight=GRADE_WEIGHT[a?.grade]||1;
+ const cost={stone:40*weight*next,ore:4*weight*next},limit=Math.min(MAX_ENHANCEMENT,s.realm*2);
+ let reason='';
+ if(!a||!(s.items[id]>0))reason='Bạn chưa sở hữu pháp bảo này.';
+ else if(!s.realm)reason='Cần nhập đạo trước khi luyện khí.';
+ else if(s.battle?.status==='fighting')reason='Hãy hoàn thành trận đấu trước.';
+ else if(level>=MAX_ENHANCEMENT)reason='Đã cường hóa tối đa +10.';
+ else if(level>=limit)reason='Cần đạt '+REALMS[Math.ceil(next/2)]+' để cường hóa +'+next+'.';
+ else if(s.stone<cost.stone||s.ore<cost.ore)reason='Cần '+cost.stone+' linh thạch và '+cost.ore+' linh khoáng.';
+ return {ready:!reason,reason,level,next,limit,cost,artifact:a};
+}
+export function enhance(s,id){
+ const status=enhancementStatus(s,id);if(!status.ready)return status.reason;
+ s.stone-=status.cost.stone;s.ore-=status.cost.ore;s.enhancements||={};s.enhancements[id]=status.next;
+ addLog(s,'Cường hóa '+itemName(id)+' lên +'+status.next+'. Chỉ số pháp bảo tăng '+(status.next*15)+'% so với ban đầu.');return null;
+}
+export function dismantleStatus(s,id){
+ const a=ARTIFACTS.find(x=>x.id===id),book=BOOKS.find(x=>x.id===id),item=a||book;
+ const keep=a||!s.learned.includes(id)?1:0,available=Math.max(0,(s.items[id]||0)-keep),weight=GRADE_WEIGHT[item?.grade]||1;
+ const reward={stone:15*weight,ore:2*weight};let reason='';
+ if(!item)reason='Chỉ phân giải pháp bảo trùng và công pháp.';
+ else if(!s.realm)reason='Cần nhập đạo trước khi phân giải.';
+ else if(s.battle?.status==='fighting')reason='Hãy hoàn thành trận đấu trước.';
+ else if(!available)reason=a?'Giữ lại một pháp bảo để sử dụng.':'Giữ lại công pháp chưa lĩnh ngộ.';
+ else if(s.stone+reward.stone>1e12||s.ore+reward.ore>1e12)reason='Kho nguyên liệu đã đầy.';
+ return {ready:!reason,reason,available,keep,reward};
+}
+export function dismantle(s,id){
+ const status=dismantleStatus(s,id);if(!status.ready)return status.reason;
+ s.items[id]--;s.stone+=status.reward.stone;s.ore+=status.reward.ore;
+ addLog(s,'Phân giải một '+itemName(id)+', nhận '+status.reward.stone+' linh thạch và '+status.reward.ore+' linh khoáng.');return null;
+}
 export function validSave(s){try{return validateSave(s);}catch{return false;}}
 function validateSave(s){
+ if(s?.enhancements!==undefined&&(!s.enhancements||Array.isArray(s.enhancements)||typeof s.enhancements!=='object'||!Object.entries(s.enhancements).every(([id,n])=>ARTIFACTS.some(a=>a.id===id)&&s.items?.[id]>=1&&Number.isInteger(n)&&finite(n,0,MAX_ENHANCEMENT))))return false;
  if(s?.claimedMilestones!==undefined&&(!Array.isArray(s.claimedMilestones)||s.claimedMilestones.length>MILESTONE_IDS.length||new Set(s.claimedMilestones).size!==s.claimedMilestones.length||!s.claimedMilestones.every(id=>MILESTONE_IDS.includes(id))))return false;
  if(!s||s.version!==2||typeof s.name!=='string'||s.name.length<1||s.name.length>28||!['male','female'].includes(s.gender)||!Number.isInteger(s.portrait)||s.portrait<0||s.portrait>6)return false;
  if(!Number.isInteger(s.realm)||s.realm<0||s.realm>9||!Number.isInteger(s.stage)||s.stage<1||s.stage>9||!Number.isInteger(s.rank)||s.rank<0||s.rank>7)return false;
@@ -182,7 +225,7 @@ function validateSave(s){
  if(s.battle!==null){const b=s.battle;if(!BOOKS.some(t=>t.id===b.hero?.technique)||typeof b.hero?.skill!=='string'||b.hero.skill.length>60||!finite(b.hero?.dodge,0,1)||b.type==='annual'&&b.tournamentRound!==undefined&&(!Number.isInteger(b.tournamentRound)||b.tournamentRound<0||b.tournamentRound>2)||b.type==='annual'&&b.status==='fighting'&&(!s.tournament||s.tournament.year!==b.target)||b.status==='fighting'&&b.settled)return false;if(!['dungeon','promotion','annual','event'].includes(b.type)||!['fighting','won','lost'].includes(b.status)||typeof b.settled!=='boolean'||!Number.isInteger(b.turn)||b.turn<0||b.turn>160||!finite(b.round,0,80)||!Array.isArray(b.events)||b.events.length>7)return false;for(const f of [b.hero,b.enemy])if(!f||typeof f.name!=='string'||f.name.length>60||!finite(f.hp)||!finite(f.maxHp,1)||f.hp>f.maxHp||!finite(f.atk,1)||!finite(f.def)||!finite(f.energy,0,3)||!Number.isInteger(f.portrait)||f.portrait<0||f.portrait>7)return false;if(b.type==='dungeon'&&!AREAS.some(x=>x.id===b.target)||b.type==='promotion'&&(!Number.isInteger(b.target)||b.target<1||b.target>7)||b.type==='event'&&!Object.hasOwn(STORIES,b.target)||b.type==='annual'&&(!Number.isInteger(b.target)||b.target<1))return false;}
  return true;
 }
-export function restore(raw,now=Date.now()){let s;try{s=JSON.parse(raw);}catch{}if(!validSave(s))return {state:newGame(now),offline:null,recovered:!!raw};s=JSON.parse(JSON.stringify(s));s.claimedMilestones||=[];if(s.battle?.type==='annual'&&s.battle.tournamentRound===undefined)s.battle.tournamentRound=clamp(s.tournament?s.tournament.round-(s.battle.status==='won'?1:0):s.battle.status==='won'?2:0,0,2);const before={stage:s.stage,xp:s.xp,minutes:s.gameMinutes},result=advance(s,now);return {state:s,offline:result.seconds>=30?{seconds:result.seconds,minutes:s.gameMinutes-before.minutes,activity:result.activity,stage:s.stage-before.stage}:null,recovered:false};}
+export function restore(raw,now=Date.now()){let s;try{s=JSON.parse(raw);}catch{}if(!validSave(s))return {state:newGame(now),offline:null,recovered:!!raw};s=JSON.parse(JSON.stringify(s));s.claimedMilestones||=[];s.enhancements||={};if(s.battle?.type==='annual'&&s.battle.tournamentRound===undefined)s.battle.tournamentRound=clamp(s.tournament?s.tournament.round-(s.battle.status==='won'?1:0):s.battle.status==='won'?2:0,0,2);const before={stage:s.stage,xp:s.xp,minutes:s.gameMinutes},result=advance(s,now);return {state:s,offline:result.seconds>=30?{seconds:result.seconds,minutes:s.gameMinutes-before.minutes,activity:result.activity,stage:s.stage-before.stage}:null,recovered:false};}
 export function preview(scenario='mortal',now=Date.now(),realmOverride=null){const s=newGame(now,12445);if(scenario==='mortal'&&realmOverride===null||realmOverride===0)return s;measureRoot(s);measurePotential(s);beginExam(s,'cloud');for(let i=0;i<3;i++)examChoice(s,0);s.stone=600;s.herb=100;s.ore=90;s.wood=130;s.contribution=200;s.merit=260;s.stage=3;
  if(scenario==='elite'||scenario==='founder'){s.realm=4;s.stage=3;s.rank=5;s.stone=5000;s.contribution=2400;s.merit=3800;s.items.pillBreak=3;s.items.seal=1;s.artifact='seal';s.learned.push('heaven');s.technique='heaven';s.contacts=[{id:'npc1',name:'Bạch Vân',portrait:1,affinity:50,visits:0},{id:'npc3',name:'Hàn Phong',portrait:3,affinity:-40,visits:0}];s.gameMinutes=YEAR+30;s.annualYears=[1];s.annualNext=2;}
  if(Number.isInteger(realmOverride)&&realmOverride>0&&realmOverride<=9){s.realm=realmOverride;s.stage=3;s.xp=0;}

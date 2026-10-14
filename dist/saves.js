@@ -1,4 +1,4 @@
-import * as G from './journey.js?v=2.1';
+import * as G from './journey.js?v=2.4.0';
 export const KEY='thanh-van-tong-v2',AUTO=KEY+'-auto',MANUAL=KEY+'-backup',RECOVERY=KEY+'-recovery';
 function validRaw(raw){try{return !!raw&&G.validSave(JSON.parse(raw));}catch{return false;}}
 export function readBackup(storage){for(const [key,kind]of [[MANUAL,'Trước khi thay tiến trình'],[AUTO,'Bản lưu tự động gần nhất']]){const raw=storage.getItem(key);if(validRaw(raw))return {raw,state:JSON.parse(raw),kind};}return null;}

@@ -1,0 +1,218 @@
+[
+  {
+    "path": "dist/assets/retreat/realm-0.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 205998,
+    "quality": 78,
+    "source": "exec-18a1d286-0e35-4571-9853-2d36c6b44d3e.png",
+    "sha256": "effb66cb37451e3dafafdb534e075831b155af7940609d582d04024d205b8f9b"
+  },
+  {
+    "path": "dist/assets/retreat/realm-0-mobile.webp",
+    "width": 768,
+    "height": 512,
+    "bytes": 70928,
+    "quality": 74,
+    "source": "exec-18a1d286-0e35-4571-9853-2d36c6b44d3e.png",
+    "sha256": "7016133742088337f74fe28b0a6d9b4e20cf27cf42de66d9ccd0c48e9f39a5db"
+  },
+  {
+    "path": "dist/assets/retreat/realm-1.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 249434,
+    "quality": 78,
+    "source": "exec-75d78112-ceec-4b44-91b8-517f95aebcd6.png",
+    "sha256": "0d3de1fafdd5aa2b8b516b05f7031fe1894484fef5f95bf8b126ad5cb3081ff7"
+  },
+  {
+    "path": "dist/assets/retreat/realm-1-mobile.webp",
+    "width": 768,
+    "height": 512,
+    "bytes": 85182,
+    "quality": 74,
+    "source": "exec-75d78112-ceec-4b44-91b8-517f95aebcd6.png",
+    "sha256": "4312dbaf649a676963a8e9c746b6f4e4c99ee1ba67d90c64fe8c16bf79d68b0b"
+  },
+  {
+    "path": "dist/assets/retreat/realm-2.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 270920,
+    "quality": 78,
+    "source": "exec-8139a6b9-a376-41ab-b58c-9fc0ee628310.png",
+    "sha256": "a4d483b194187c6bc81eaef006a740f896e1ea66741e295e8e493264437be34c"
+  },
+  {
+    "path": "dist/assets/retreat/realm-2-mobile.webp",
+    "width": 768,
+    "height": 512,
+    "bytes": 88100,
+    "quality": 74,
+    "source": "exec-8139a6b9-a376-41ab-b58c-9fc0ee628310.png",
+    "sha256": "0c86c77d5948526e74714d4ca88e140e13eb074afd260c9d9e7b19b7290d6685"
+  },
+  {
+    "path": "dist/assets/retreat/realm-3.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 237278,
+    "quality": 78,
+    "source": "exec-04adcfac-4060-44dd-a2fe-e6d4c18deb9d.png",
+    "sha256": "5cb5213e41257f429f464a5eb0d013fabcf12151bd143aa7fb30a702340148cc"
+  },
+  {
+    "path": "dist/assets/retreat/realm-3-mobile.webp",
+    "width": 768,
+    "height": 512,
+    "bytes": 79006,
+    "quality": 74,
+    "source": "exec-04adcfac-4060-44dd-a2fe-e6d4c18deb9d.png",
+    "sha256": "634838e7f20c90a0b14def76c27f614e302fc65f5b77efce75af6dd3e48743be"
+  },
+  {
+    "path": "dist/assets/retreat/realm-4.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 197992,
+    "quality": 78,
+    "source": "exec-6f02eaf1-96ae-4586-85f7-bb70c25a71c6.png",
+    "sha256": "9ad864120996b59cd748783182850a9dcb7515d0b6a8de2fda07c887f4677d32"
+  },
+  {
+    "path": "dist/assets/retreat/realm-4-mobile.webp",
+    "width": 768,
+    "height": 512,
+    "bytes": 69832,
+    "quality": 74,
+    "source": "exec-6f02eaf1-96ae-4586-85f7-bb70c25a71c6.png",
+    "sha256": "f7e4adf3285092e9e72c839e853d679598facdf1329978fd3e3eadef7cdf1df3"
+  },
+  {
+    "path": "dist/assets/retreat/realm-5.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 229668,
+    "quality": 78,
+    "source": "exec-8e13aa03-cdfe-4ec3-8ce5-4e590f0f0f2a.png",
+    "sha256": "2f59e763338dc52fafb4378ed04b15b6fa389a47b5e83fb2eca2acecf5be3707"
+  },
+  {
+    "path": "dist/assets/retreat/realm-5-mobile.webp",
+    "width": 768,
+    "height": 512,
+    "bytes": 77592,
+    "quality": 74,
+    "source": "exec-8e13aa03-cdfe-4ec3-8ce5-4e590f0f0f2a.png",
+    "sha256": "0e87ec2118f5ce5ef50945f01cc51bea858f5845e8367a224536c663b61ad3ad"
+  },
+  {
+    "path": "dist/assets/retreat/realm-6.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 215294,
+    "quality": 78,
+    "source": "exec-fad39179-df97-42ba-822e-9c81c8ce8a33.png",
+    "sha256": "4290520503a2675120c69dbca004cd8fb15a471ad5b2ad945c3f54e52de0cc20"
+  },
+  {
+    "path": "dist/assets/retreat/realm-6-mobile.webp",
+    "width": 768,
+    "height": 512,
+    "bytes": 71320,
+    "quality": 74,
+    "source": "exec-fad39179-df97-42ba-822e-9c81c8ce8a33.png",
+    "sha256": "ec33ba724581d2809ef0582d98bdd7f7968506bd4cf305f4250f703323d6c6e9"
+  },
+  {
+    "path": "dist/assets/retreat/realm-7.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 256638,
+    "quality": 78,
+    "source": "exec-979b4ab9-057d-4972-9d7d-94882c6622b4.png",
+    "sha256": "6219ef3339513514af5322d68a5ebafb07852ef3fe74bf57a11531380676af06"
+  },
+  {
+    "path": "dist/assets/retreat/realm-7-mobile.webp",
+    "width": 768,
+    "height": 512,
+    "bytes": 80992,
+    "quality": 74,
+    "source": "exec-979b4ab9-057d-4972-9d7d-94882c6622b4.png",
+    "sha256": "4e9d9d7bbca01670134d70dbaebbc6395a14b358ea438189cd5d9b49bc007d13"
+  },
+  {
+    "path": "dist/assets/retreat/realm-8.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 208486,
+    "quality": 78,
+    "source": "exec-df89af93-fb3f-4125-8c92-25b46a8f5f88.png",
+    "sha256": "d757377e4c92ff65cc0a09fd46a74ae91f03fba44375b86f3a0335a5203fa4f2"
+  },
+  {
+    "path": "dist/assets/retreat/realm-8-mobile.webp",
+    "width": 768,
+    "height": 512,
+    "bytes": 70494,
+    "quality": 74,
+    "source": "exec-df89af93-fb3f-4125-8c92-25b46a8f5f88.png",
+    "sha256": "8c33c4afdc7bf75a02f31b33f53c9224c6dbfd2936cd435f5a322ecb3073cce3"
+  },
+  {
+    "path": "dist/assets/retreat/realm-9.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 215876,
+    "quality": 78,
+    "source": "exec-5898db55-7c70-4799-9aa9-24539f065e0c.png",
+    "sha256": "7bb2bb954946c9fc9edd70a890a9cbc545a9b741811493f308d619eb9aa65a1b"
+  },
+  {
+    "path": "dist/assets/retreat/realm-9-mobile.webp",
+    "width": 768,
+    "height": 512,
+    "bytes": 69598,
+    "quality": 74,
+    "source": "exec-5898db55-7c70-4799-9aa9-24539f065e0c.png",
+    "sha256": "b0bef905d67bf9743ccda1bcf69620159a3016eee79c81498eb2f6c491c924cf"
+  },
+  {
+    "path": "dist/assets/characters.webp",
+    "width": 1024,
+    "height": 512,
+    "bytes": 286216,
+    "quality": 84,
+    "source": "exec-58a0ea21-b315-4bc3-bf7d-5d4acc805a24.png",
+    "sha256": "75053a2ea05c31064dc9374d6d30b0621913c0bc141625d4b42d4b0a5b1c021d"
+  },
+  {
+    "path": "dist/assets/battle-courtyard.webp",
+    "width": 1280,
+    "height": 853,
+    "bytes": 199080,
+    "quality": 78,
+    "source": "exec-8a9debd7-5946-48be-842c-194665cafc09.png",
+    "sha256": "c98e05a594c187c4f7af49ea3cc3c39ea05423f3525f770392a0f04b9dabbb37"
+  },
+  {
+    "path": "dist/assets/sect-world.webp",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 328506,
+    "quality": 76,
+    "source": "exec-672ee330-9f02-4688-82d0-cedff4aa1b28.png",
+    "sha256": "572ff3da47dff94232a31efd0ed1d95395a0c9a04169d9a228774d216da4af45"
+  },
+  {
+    "path": "dist/assets/sect-world-mobile.webp",
+    "width": 768,
+    "height": 512,
+    "bytes": 97006,
+    "quality": 65,
+    "source": "exec-672ee330-9f02-4688-82d0-cedff4aa1b28.png",
+    "sha256": "48c99707c8a8ff4a20ca02b90dc7a011b087109d6a29e3e9bd201666967864ff"
+  }
+]

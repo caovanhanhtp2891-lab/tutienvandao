@@ -1,10 +1,30 @@
-# Tu Tiên Vấn Đạo · v2.2
+# Tu Tiên Vấn Đạo · v2.4 · Chibi
 
 Game tu tiên tiếng Việt cho PC và điện thoại, bắt đầu từ một phàm nhân và phát triển đến tông chủ hoặc chưởng môn.
 
 **[Chơi trên GitHub Pages](https://caovanhanhtp2891-lab.github.io/tutienvandao/)** · [Kiểm tra bốn kích thước màn hình](https://caovanhanhtp2891-lab.github.io/tutienvandao/responsive-preview.html).
 
-## Hình ảnh tự nhiên v2.2
+## Bộ hình chibi v2.4
+
+- Thay toàn bộ 24 ảnh đang dùng: 10 cảnh bế quan với bản PC / điện thoại, atlas tám nhân vật, sân tỷ thí và bản đồ tông môn hai kích thước.
+- Nhân vật đầu tròn, má hồng, nét mặt vui vẻ; trang phục, cảnh và linh lực đổi theo cảnh giới. Có linh thể nhỏ, hồ sen, núi tuyết, đảo mây và linh long đáng yêu.
+- Giao diện đồng bộ màu kem, xanh ngọc và hồng đào, bảng sáng bo tròn; giữ bố cục vừa màn hình, điều hướng và tiến trình cũ. Cả bản v1 dùng ảnh mới.
+- Ảnh WebP nhẹ, chỉ tải cảnh hiện tại; giữ chế độ hiệu ứng nhẹ / tắt. Cập nhật URL tài nguyên v2.4.0 để tránh dùng ảnh cũ trong cache.
+- Gồm Luyện khí / Phân giải của v2.3 và giữ nguyên bản lưu v2.
+
+[Thiết kế và nguồn ảnh](docs/chibi-art.md) · [Manifest 24 ảnh](docs/chibi-art-manifest.json) · [Bộ prompt](docs/chibi-art-prompts.json).
+
+## Luyện khí v2.3
+
+- **Tu luyện → Luyện khí**: cường hóa cả năm pháp bảo bằng linh thạch và linh khoáng, chắc chắn thành công. Mỗi cấp cộng 15% chỉ số gốc của pháp bảo; tối đa +10, mở dần theo cảnh giới.
+- **Tu luyện → Phân giải**: đổi từng bản pháp bảo trùng hoặc công pháp dư thành nguyên liệu. Luôn giữ một pháp bảo và một bản công pháp chưa học; công pháp đã lĩnh ngộ không bị mất.
+- Túi đồ hiển thị cấp cường hóa và chỉ số thực tế. Cấp được giữ theo loại pháp bảo khi đổi trang bị, nhặt thêm đồ hoặc tải lại.
+- Không cường hóa / phân giải giữa trận đấu. Sửa lỗi lựa chọn cốt truyện có thể xóa sự kiện đang tỷ thí, làm mất phần thưởng.
+- Giữ khóa và định dạng bản lưu v2; bản lưu cũ được bổ sung dữ liệu cường hóa, giữ nguyên nhân vật và tiến trình.
+
+[Quy tắc, chi phí và kết quả kiểm tra v2.3](docs/forging-v2-3.md).
+
+## Lịch sử hình ảnh tự nhiên v2.2
 
 - Thay toàn bộ ảnh raster đang dùng: 10 cảnh bế quan, 8 chân dung trong atlas, sân tỷ thí và bản đồ tông môn.
 - Phong cách điện ảnh chân thực: gương mặt, vải, da, gỗ, đá và cây cối tự nhiên; cảnh giới đổi trang phục, bối cảnh và ánh sáng.
@@ -67,7 +87,7 @@ Kiểm tra với Node.js 22 trở lên:
 npm test
 ```
 
-57 kiểm tra logic bao gồm 19 kiểm tra quản lý v1, 25 kiểm tra hành trình v2 và 13 kiểm tra bế quan / thành tựu / bản lưu: khảo hạch, thời gian, offline, năm, phần thưởng một lần, giao lưu, quan hệ, chiến đấu, thăng chức, khai tông và nhập tiến trình lỗi. GitHub Actions chạy kiểm tra và triển khai trên mỗi lần cập nhật `main`.
+69 kiểm tra logic bao gồm 19 kiểm tra quản lý v1, 25 kiểm tra hành trình v2, 14 kiểm tra bế quan / hình ảnh / thành tựu / bản lưu và 11 kiểm tra luyện khí / cốt truyện: khảo hạch, thời gian, offline, năm, phần thưởng một lần, giao lưu, quan hệ, chiến đấu, thăng chức, khai tông và nhập tiến trình lỗi. GitHub Actions chạy kiểm tra và triển khai trên mỗi lần cập nhật `main`.
 
 ## Mã nguồn
 
