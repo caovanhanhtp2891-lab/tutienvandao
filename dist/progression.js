@@ -1,4 +1,4 @@
-import * as G from './journey.js?v=2.3.0';
+import * as G from './journey.js?v=2.4.0';
 export const VISUALS=[
  ['Tĩnh tâm nơi sơn môn','#c8b887','Sơ tâm chưa nhiễm bụi trần',0],
  ['Dẫn khí nhập thể','#b6c7a5','Trúc xanh đón gió · Nhất tâm nhập đạo',2],
@@ -10,7 +10,7 @@ export const VISUALS=[
  ['Thiên nhân hợp nhất','#c7d1ae','Tùng già hoa nở · Thiên nhân hợp nhất',8],
  ['Đại đạo viên thành','#e0c694','Bình minh trên mây · Đại đạo viên thành',9],
  ['Vượt kiếp phi thăng','#bac4d5','Sơn lôi trước mắt · Nhất niệm vượt kiếp',10]
-].map(([title,color,description,particles],realm)=>({realm,name:G.REALMS[realm],title,color,description,particles,image:`assets/retreat/realm-${realm}.webp?v=2.2.0`,mobile:`assets/retreat/realm-${realm}-mobile.webp?v=2.2.0`}));
+].map(([title,color,description,particles],realm)=>({realm,name:G.REALMS[realm],title,color,description,particles,image:`assets/retreat/realm-${realm}.webp?v=2.2.0`,mobile:`assets/retreat/realm-${realm}-mobile.webp?v=2.4.0`}));
 export function visual(realm){return VISUALS[Number.isInteger(realm)&&realm>=0&&realm<VISUALS.length?realm:0];}
 export function effectiveRate(s){if(!s.training||!s.realm||s.stage===9&&s.xp>=G.goal(s))return 0;return G.trainingRate(s)*(s.activity?.35:1)*(s.battle?.status==='fighting'?.25:1);}
 export function cultivation(s){const rate=effectiveRate(s),full=s.realm&&s.stage===9&&s.xp>=G.goal(s);return {rate,full,mode:s.path==='mortal'?'Tĩnh tâm':full?(s.realm===9?'Độ Kiếp viên mãn':'Chờ đột phá'):s.battle?.status==='fighting'?'Đang tỷ thí':s.activity?'Tu luyện 35% tốc độ':s.training?'Đang bế quan':'Tạm nghỉ',seconds:rate?Math.max(0,(G.goal(s)-s.xp)/rate):null,next:s.stage<9?`${G.REALMS[s.realm]} tầng ${s.stage+1}`:s.realm<9?G.REALMS[s.realm+1]:'Cảnh giới viên mãn'};}

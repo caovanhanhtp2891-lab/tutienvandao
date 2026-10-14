@@ -1,0 +1,39 @@
+/* Shared chibi palette; layout and game behavior remain in their original sheets. */
+:root{color-scheme:light;--ink:#294c46;--muted:#526f65;--gold:#8d6132;--jade:#3f826e;--line:#83ad952f;--panel:#fffdf6;--shadow:0 8px 24px #345c4515;--serif:'Be Vietnam Pro',system-ui,sans-serif}
+body{background:#ecf4e9;color:var(--ink)}
+.game-header,.topbar,.bottom-nav,.sidebar{background:linear-gradient(120deg,#fffdf7,#e5f2e7);border-color:#a2bf9b66;color:var(--ink)}
+.wordmark strong{color:#315d50;text-shadow:none}.wordmark small,.wordmark span{color:#7f633d}
+.icon-button{background:#f4efdc;color:#5d775c;border:1px solid #9bb89955;border-radius:12px}
+.resource-strip svg,.resource svg{color:#9b7042}.resource-strip small,.resource small,.calendar{color:#546d60}
+.resource{background:#fffaf2;border-color:#a7b99d55}.resource b,.resource-strip span{color:#294c46}
+.stage{background:#e2efdc url('assets/sect-world.webp?v=2.4.0') center/cover}.retreat{background:#edf0df}
+.retreat-shade{background:linear-gradient(0deg,#e8efdecc,transparent 28%),linear-gradient(90deg,#fff6e035,transparent 35%)}
+.retreat-profile,.objective-card,.player-panel{background:linear-gradient(130deg,#fffdf6f5,#f1f7e8ee);border-color:#adc7a688;border-radius:16px;box-shadow:0 8px 24px #435d4222;color:#294c46}
+.retreat-identity .eyebrow,.retreat-rate,.retreat-eta,.retreat-cultivation>p,.retreat-equipment,.cultivation-mode,.retreat-meter-label,.retreat-meter-label strong{color:#496a59}
+.retreat-identity .icon-button{background:#e0efda;color:#496a59}.retreat-equipment,.retreat-cultivation{border-color:#96b09544}
+.retreat-title{color:#294c46;text-shadow:0 1px 8px #fff8e8}.retreat-title h2{color:#315b4b;text-shadow:0 2px 10px #ffffefd9}.retreat-title p,.retreat-title .eyebrow,.realm-guide-button{color:#315b4b}
+.objective-card strong{color:#315b4b}.objective-card p,.retreat-status,.clock-hint{color:#46604e}
+.retreat-help{color:#536c4e;background:#fffdf0e8;border-color:#9fb59488;border-radius:50%}
+.badge{background:#e8f1e5;color:#49634a;border-color:#abc39b66;border-radius:9px}.badge.gold{background:#fff0d3;color:#80592e;border-color:#d7b77788}
+.primary,.objective-button,.btn,.btn.gold{background:linear-gradient(135deg,#779d69,#4e8064);border:1px solid #4e806455;color:#fffdf6;border-radius:11px;text-shadow:none;box-shadow:0 3px 9px #41654722}
+.secondary,.back-button,.page-button,.realm-guide-button,.btn.secondary{background:#fffaf0;color:#46634f;border:1px solid #9fb89466;border-radius:10px}
+.danger,.btn.danger{background:#f7e1da;color:#904b48;border:1px solid #c7917c66;border-radius:10px}
+button:hover:not(:disabled){filter:brightness(.98)}button:disabled{opacity:.55}
+.nav-button,.nav-item{color:#536d5d}.nav-button.active,.nav-item.active{color:#315b4b;background:#dae9d1;border-color:#adc79b88;border-radius:14px}.nav-button.active:before,.nav-item.active:before{background:#80a66d}.notification{background:#dc8c9b}
+.function-screen{background:#edf4e7e8}.screen-head h2,.screen-head .eyebrow{color:#315b4b}.screen-head p,.screen-footer{color:#526a59}
+.tab-button{color:#536d5d;background:#f8fbf2;border:1px solid #b4c7a877;border-radius:10px}.tab-button.active{color:#315b4b;background:#dcecd3;border-color:#96b386}
+.function-card,.function-card[class*=sect-style-],.panel,.master-panel{color:#294c46;background:linear-gradient(140deg,#fffdf7,#eef5e7);border-color:#adc3a27a;border-radius:15px;box-shadow:0 4px 16px #345d3910}
+.function-card h3,.panel h3,.master-name,.empty-state h3{color:#315b4b}.function-card>p,.panel p,.empty-state p{color:#526a59}.card-emblem{color:#64805a;background:#e6efdc;border-color:#b4c6a6;border-radius:12px}
+.reward-text,.action-condition,.activity-status{color:#687449}.action-condition.ready{color:#3f7458}.milestone-ready{border-color:#9ab67a;background:#f2f7df}
+.progress,.retreat-cultivation .progress{background:#dce8cf;border-color:#a5bf9866}.progress i,.retreat-cultivation .progress i{background:linear-gradient(90deg,#81ab74,#d0bd7a)}
+.measure-bar,.foundation-strip,.settings-info,.realm-road-item,.stat-comparison>span{background:#f5f8e8;color:#48604c;border-color:#a6be9755;border-radius:12px}
+.realm-road-item strong,.realm-road-item small,.stat-comparison b{color:#48604c}.realm-road-item.current{background:#fff0d0;border-color:#c7aa6e}.realm-road-item.current strong{color:#886632}
+input,select{background:#fffdf6;color:#294c46;border-color:#9cb58c99;border-radius:10px}
+dialog{background:#fffdf6;color:#294c46;border:1px solid #a7bc9488;border-radius:18px;box-shadow:0 16px 50px #26443244}dialog::backdrop{background:#244a3d66;backdrop-filter:blur(4px)}
+.modal-head{background:#eaf2df;border-color:#a7bc9444}.modal-head h2,.modal-head .eyebrow,.dialog-intro,.field-label,.modal-note,.help-list,.profile-preview strong,.profile-preview p,.settings-info strong{color:#48604c}
+.choice-button{background:#edf4e4;color:#315b4b;border-color:#abc29788;border-radius:12px}.choice-button>span{background:#d6e7c9;color:#49694a}
+.battle-arena{background-image:url('assets/battle-courtyard.webp?v=2.4.0');border-color:#b8c19899;border-radius:15px}.battle-event,.battle-controls,.battle-result p,.battle-result strong,.battle-summary{color:#46604e}.fighter h3,.fighter>small{color:#234838;text-shadow:0 1px 4px #fffdf4}.fighter-hp{background:#efdbc7}.fighter-energy{color:#f8ce79}.battle-result{border-color:#a7bc9455}
+.toast{background:#fffaf0;color:#315b4b;border-color:#a7bd94;border-radius:13px}.legacy-link{color:#4d755c}
+.map-card,.map-bottom,.map-location,.map-live,.building-marker,.building-marker:hover{background:#fffaf0ec;color:#315b4b;border-color:#b3bc9188}.map-location b,.map-bottom strong,.building-marker b,.building-marker small,.building-marker .lv{color:#46654e}
+.game-shell .portrait{background-image:url('assets/characters.webp?v=2.4.0')}.brand-seal{background:#e2efd4;color:#688453;border-color:#96b080}
+@media(max-width:719px){.stage{background-image:url('assets/sect-world-mobile.webp?v=2.4.0')}.retreat-shade{background:linear-gradient(0deg,#e8efdecc,transparent 38%)}.retreat-title p{color:#315b4b}.retreat-profile,.objective-card{background:linear-gradient(110deg,#fffdf6f5,#eff6e7ef)}}

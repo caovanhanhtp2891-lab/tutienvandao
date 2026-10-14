@@ -1,6 +1,6 @@
-import * as G from './journey.js?v=2.3.0';
-import * as P from './progression.js?v=2.3.0';
-import * as S from './saves.js?v=2.3.0';
+import * as G from './journey.js?v=2.4.0';
+import * as P from './progression.js?v=2.4.0';
+import * as S from './saves.js?v=2.4.0';
 import * as F from './game.js';
 const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icon=(n,cls='')=>`<svg class="icon ${cls}" aria-hidden="true"><use href="#i-${n}"/></svg>`;
