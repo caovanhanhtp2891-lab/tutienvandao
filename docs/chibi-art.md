@@ -24,7 +24,7 @@ Cảnh PC dưới 350 KB, cảnh điện thoại dưới 100 KB, atlas dưới 4
 
 `dist/chibi.css` được tải sau các stylesheet hiện có trong cả `index.html` và `legacy.html`. Nền kem / xanh nhạt, bảng sáng với chữ xanh đậm, nút xanh ngọc và góc bo mềm. Lớp phủ cảnh giảm độ tối để tranh rõ hơn. Icon SVG có nét bo tròn; favicon đổi thành linh liên cười.
 
-Toàn bộ URL phiên bản JS, CSS và WebP đổi sang `v=2.4.0`. Khóa bản lưu, ID vật phẩm và tiến trình giữ nguyên. Gồm các chức năng v2.3 đã kiểm tra trong `docs/forging-v2-3.md`.
+Toàn bộ URL phiên bản JS, CSS và WebP đổi sang `v=2.4.1`. Khóa bản lưu, ID vật phẩm và tiến trình giữ nguyên. Gồm các chức năng v2.3 đã kiểm tra trong `docs/forging-v2-3.md`.
 
 ## Kiểm tra
 
