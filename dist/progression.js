@@ -1,4 +1,4 @@
-import * as G from './journey.js?v=2.1';
+import * as G from './journey.js?v=2.3.0';
 export const VISUALS=[
  ['Tĩnh tâm nơi sơn môn','#c8b887','Sơ tâm chưa nhiễm bụi trần',0],
  ['Dẫn khí nhập thể','#b6c7a5','Trúc xanh đón gió · Nhất tâm nhập đạo',2],
